@@ -106,13 +106,6 @@ export const _initialPanelCollection = (function () {
   return panelCollection;
 })();
 
-/**
- * Updates the `panelCollection` portion of the Redux state according to the action passed in.
- *
- * @param panelCollection
- * @param action
- * @returns {*}
- */
 const panelCollectionReducer = function (panelCollection = _initialPanelCollection, action = {}) {
   let nextPanelCollection,
     panelIds,

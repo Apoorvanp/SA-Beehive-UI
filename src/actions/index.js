@@ -1,7 +1,4 @@
 import moment from 'moment';
-
-// Each of these functions returns a Redux action.
-
 export const toggleSidebarVisibility = function () {
   return {
     type: 'TOGGLE_SIDEBAR_VISIBILITY'

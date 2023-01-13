@@ -11,21 +11,13 @@ class PanelStatusTable extends Component {
     creditsData: []
   }
   setInterval(this.callAPIForGettingCreditsData.bind(this), 5000);
-
   }
-
   callAPIForGettingCreditsData() {
-
   var myHeaders = new Headers();
-
   myHeaders.append("Content-Type", "application/json");
-
   const requestOptions = {
-
     method: 'GET',
-
     headers: myHeaders
-
   }
 
   let returnValue;
@@ -86,12 +78,8 @@ class PanelStatusTable extends Component {
           </Table.Body>
         </Table>
       );
-
-
     };
-
    }
-
 }
 
 PanelStatusTable.propTypes = {

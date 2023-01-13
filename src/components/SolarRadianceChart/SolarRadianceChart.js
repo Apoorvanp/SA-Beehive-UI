@@ -49,12 +49,10 @@ class SolarRadianceChart extends Component {
       },
       tooltips: {
         callbacks: {
-          // Display the series label as the tooltip title.
           title: (tooltipItem, data) => {
             const datasetIndex = tooltipItem[0].datasetIndex;
             return data.datasets[datasetIndex].label;
           },
-          // Display a truncated version of the bar value as the tooltip value.
           label: (tooltipItem, data) => {
             const barValue = tooltipItem.yLabel,
               decimalPlaces = 2;
@@ -72,7 +70,6 @@ class SolarRadianceChart extends Component {
       return SolarRadianceChart.getInitialTotalOutputPower(this.props.panels);
     });
 
-    // Store these values in the component state so React re-renders the component whenever these values change.
     this.state = {
       totalOutputPowerHistory: initialTotalOutputPowerHistory,
       pointRadius: this.initialPointRadius,

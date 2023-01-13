@@ -3,7 +3,6 @@ import {Icon, Menu, Sidebar} from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import './VerticalNavBar.css';
 
-// Helper function that displays an alert containing the text content of the clicked element.
 const onClickLink = (event) => alert(`You clicked the ${event.target.textContent.trim()} link.`);
 
 class VerticalNavBar extends Component {

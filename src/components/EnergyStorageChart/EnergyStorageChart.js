@@ -53,12 +53,10 @@ class EnergyStorageChart extends Component {
       },
       tooltips: {
         callbacks: {
-          // Display the line label as the tooltip title.
           title: (tooltipItem, data) => {
             const datasetIndex = tooltipItem[0].datasetIndex;
             return data.datasets[datasetIndex].label;
           },
-          // Display a truncated version of the power value as the tooltip text.
           label: (tooltipItem, data) => {
             const powerValue = tooltipItem.yLabel;
             return powerValue.toFixed(2) + ' kW';
@@ -73,7 +71,6 @@ class EnergyStorageChart extends Component {
 
     const initialTotalOutputPowerHistory = [null, null, null, null, null, null];
 
-    // Store these values in the component state so React re-renders the component whenever these values change.
     this.state = {
       totalOutputPowerHistory: initialTotalOutputPowerHistory,
       pointRadius: this.initialPointRadius,

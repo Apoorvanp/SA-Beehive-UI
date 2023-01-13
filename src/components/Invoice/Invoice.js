@@ -50,8 +50,6 @@ class Invoice extends Component {
 
 })
 
-    console.log("INVOICE DATA HERE",data)
-
   })
 
   return returnValue;
@@ -61,88 +59,33 @@ class Invoice extends Component {
   render() {
 
     if(this.state.invoiceConsumptions && this.state.invoiceProductions) {
-
-        console.log("Consumptions", this.state.invoiceConsumptions)
-        console.log("Productions", this.state.invoiceProductions)
       return (
         <div>
           <b>Billed Amount: </b><b>{this.state.invoiceData}</b>
         <Table className="my-table">
-
           <Table.Header>
-
             <Table.Row>
-
               <Table.HeaderCell className="table-header-cell">Seller Community ID</Table.HeaderCell>
               <Table.HeaderCell className="table-header-cell">Seller House ID</Table.HeaderCell>
               <Table.HeaderCell className="table-header-cell">Units(V)</Table.HeaderCell>
               <Table.HeaderCell className="table-header-cell">Price</Table.HeaderCell>
               <Table.HeaderCell className="table-header-cell">Consumed At</Table.HeaderCell>
             </Table.Row>
-
           </Table.Header>
-
           <Table.Body className="table-body">
-
             {this.state.invoiceConsumptions.map( function (invoice,index) {
-
               return (
                 <Table.Row className={`table-row ${index%2 ===0 ? 'table-row-even' : 'table-row-odd'}`}>
-
                   <Table.Cell className="table-cell">{invoice.sellerCommunityId}</Table.Cell>
                   <Table.Cell className="table-cell">{invoice.sellerHouseId}</Table.Cell>
                   <Table.Cell className="table-cell">{invoice.units}</Table.Cell>
                   <Table.Cell className="table-cell">{invoice.price}</Table.Cell>
                   <Table.Cell className="table-cell">{invoice.consumedAt}</Table.Cell>
-
                 </Table.Row>
               )
             })}
           </Table.Body>
         </Table>
-
-        {/* <Table className="my-table">
-
-          <Table.Header>
-
-            <Table.Row>
-              <Table.HeaderCell className="table-header-cell">Buyer Community ID</Table.HeaderCell>
-              <Table.HeaderCell className="table-header-cell">Buyer House ID</Table.HeaderCell>
-              <Table.HeaderCell className="table-header-cell">Units(V)</Table.HeaderCell>
-              <Table.HeaderCell className="table-header-cell">Price</Table.HeaderCell>
-              <Table.HeaderCell className="table-header-cell">Consumed At</Table.HeaderCell>
-            </Table.Row>
-          </Table.Header>
-          <Table.Body className="table-body">
-            {this.state.invoiceProductions.map( function (invoice,index) {
-              return (
-                <Table.Row className={`table-row ${index%2 ===0 ? 'table-row-even' : 'table-row-odd'}`}>
-
-                  <Table.Cell className="table-cell">{invoice.buyerCommunityId}</Table.Cell>
-                  <Table.Cell className="table-cell">{invoice.buyerHouseId}</Table.Cell>
-                  <Table.Cell className="table-cell">{invoice.units}</Table.Cell>
-                  <Table.Cell className="table-cell">{invoice.price}</Table.Cell>
-                  <Table.Cell className="table-cell">{invoice.consumedAt}</Table.Cell>
-
-
-                </Table.Row>
-
-
-
-              )
-
-
-
-            })}
-
-
-
-          </Table.Body>
-
-
-
-  </Table> */}
-
         </div>
       );
     };

@@ -23,13 +23,6 @@ export const _initialBatteries = (function () {
   ];
 })();
 
-/**
- * Updates the `batteries` portion of the Redux state according to the action passed in.
- *
- * @param batteries
- * @param action
- * @returns {*}
- */
 const batteriesReducer = function (batteries = _initialBatteries, action = {}) {
   let nextBatteries;
 

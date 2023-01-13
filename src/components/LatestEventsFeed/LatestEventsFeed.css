@@ -14,18 +14,15 @@
     cursor: default;
 }
 
-/* Animate the entrance of the New Event. */
 .latest-events-feed--event--enter {
     opacity: 0;
 }
 
 .latest-events-feed--event--enter.latest-events-feed--event--enter-active {
-    /* Fade in. */
     opacity: 1;
     transition: opacity 1s ease;
 }
 
-/* Describe and animate the New Event indicator pseudo-element. */
 .latest-events-feed--event-date::after {
     content: '';
     display: inline-block;
@@ -35,13 +32,11 @@
     border-radius: .5em;
     background-color: rgba(33, 186, 67, 1);
 
-    /* Fade out. */
     opacity: 0;
     transition: opacity 1.5s ease;
 }
 
 .latest-events-feed--event--enter.latest-events-feed--event--enter-active .latest-events-feed--event-date::after {
-    /* Fade in. */
     opacity: 1;
     transition: opacity 1s ease;
 }

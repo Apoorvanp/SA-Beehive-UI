@@ -19,13 +19,6 @@ class LatestEventsFeed extends Component {
           iconName = 'clock outline';
           break;
       }
-
-      // Format the timestamp.
-      //
-      // TODO: Consider formatting the timestamp using moment.js functionality instead of using raw JavaScript.
-      // Reference: http://momentjs.com/docs/#/customization/calendar/
-      // Reference: http://momentjs.com/docs/#/customization/long-date-formats/
-      //
       let formattedTimestamp = event.timestamp.calendar();
       if (formattedTimestamp.substr(-3) === ' AM') {
         formattedTimestamp = formattedTimestamp.substr(0, formattedTimestamp.length - 3) + 'am';

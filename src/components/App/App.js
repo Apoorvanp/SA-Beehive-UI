@@ -15,13 +15,6 @@ class App extends Component {
     setInterval(this.updateStoredEnergies.bind(this), 4000);
   }
 
-  /**
-   * Begins the process of updating the input radiance value of each panel in the Redux store, with a random value
-   * near the current value.
-   *
-   * Note: If we were using a real-life solar panel system, we might read these values from a web server (e.g. API).
-   * However, since we are not using a real-life solar panel system, we are generating these values ourselves here.
-   */
   updateInputRadiances() {
     const newInputRadiancesByPanelId = [];
     this.props.panels.forEach((panel) => {
@@ -30,13 +23,7 @@ class App extends Component {
     this.props.updateInputRadiances(newInputRadiancesByPanelId);
   }
 
-  /**
-   * Begins the process of updating the energy stored value of each battery in the Redux store, with a random value
-   * near the current value.
-   *
-   * Note: If we were using a real-life solar panel system, we might read these values from a web server (e.g. API).
-   * However, since we are not using a real-life solar panel system, we are generating these values ourselves here.
-   */
+
   updateStoredEnergies() {
     const newStoredEnergiesByBatteryId = [];
     this.props.batteries.forEach((battery) => {
@@ -45,9 +32,6 @@ class App extends Component {
     this.props.updateStoredEnergies(newStoredEnergiesByBatteryId);
   }
 
-  /**
-   * Hides the sidebar if the sidebar is visible.
-   */
   hideSidebarIfVisible() {
     if (this.props.sidebarVisible === true) {
       this.props.toggleSidebarVisibility();
